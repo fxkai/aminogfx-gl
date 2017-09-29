@@ -6,7 +6,6 @@
                 "src/base.cpp",
                 "src/base_js.cpp",
                 "src/base_weak.cpp",
-
                 "src/fonts/vector.c",
                 "src/fonts/vertex-buffer.c",
                 "src/fonts/vertex-attribute.c",
@@ -18,11 +17,8 @@
                 "src/fonts/shader.c",
                 "src/fonts/mat4.c",
                 "src/fonts.cpp",
-
                 "src/images.cpp",
-
                 "src/videos.cpp",
-
                 "src/shaders.cpp",
                 "src/renderer.cpp",
                 "src/mathutils.cpp"
@@ -86,37 +82,37 @@
                 ['OS=="linux"', {
 					"conditions" : [
 	                    ["target_arch=='arm'", {
-		                    "sources": [
-                                "src/ilclient/ilclient.c",
-                                "src/ilclient/ilcore.c",
-		                        "src/rpi.cpp",
-                                "src/rpi_video.cpp"
+		                "sources": [
+                                	"src/ilclient/ilclient.c",
+                                	"src/ilclient/ilcore.c",
+		                	"src/rpi.cpp",
+                                	"src/rpi_video.cpp"
 		                    ],
-		                    "libraries": [
-		                        "-L/opt/vc/lib/",
-                                "-lbcm_host",
-		                        "-lGLESv2",
+		                "libraries": [
+		                        "-L ../../../../../staging/usr/lib/",
+                                	"-lbcm_host",
+		                	"-lGLESv2",
 		                        "-lEGL",
-                                "-lopenmaxil",
-                                "-lvcos",
-                                "-lvchiq_arm",
+                                	"-lopenmaxil",
+                                	"-lvcos",
+                                	"-lvchiq_arm",
 		                        '<!@(freetype-config --libs)',
-                                "-ljpeg",
-                                "-lpng",
-                                '-lavcodec',
-                                '-lavformat',
-                                '-lswscale'
+                                	"-ljpeg",
+                                	"-lpng",
+                                	'-lavcodec',
+                                	'-lavformat',
+                                	'-lswscale'
 		                    ],
 		                    "defines": [
 		                        "RPI"
 		                    ],
 		                    "include_dirs": [
-		                        "/opt/vc/include/",
-                                "/opt/vc/include/IL/",
-		                        "/usr/include/freetype2",
-		                        "/opt/vc/include/interface/vcos/pthreads",
-		                        "/opt/vc/include/interface/vmcs_host/linux",
-                                "/opt/vc/include/interface/vchiq/",
+					"../../../../../staging/usr/include",
+					"../../../../../staging/usr/include/freetype2",
+					"../../../../../staging/usr/include/IL",
+		                        "../../../../../staging/usr/include/interface/vcos/pthreads",
+		                        "../../../../../staging/usr/include/interface/vmcs_host/linux",
+                                	"../../../../../staging/usr/include/interface/vchiq/",
 		                        '<!@(freetype-config --cflags)'
 		                    ],
                             "cflags": [
@@ -148,7 +144,7 @@
 		                        "LINUX"
 		                    ],
 		                    "include_dirs": [
-		                        "/usr/include/freetype2",
+		                        "../../../../../staging/usr/include/freetype2",
 		                        "<!@(freetype-config --cflags)"
 		                    ]
 		                }]
